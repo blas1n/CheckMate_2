@@ -1,6 +1,7 @@
 #pragma once
 
 #include "stdafx.h"
+#include "String.h"
 #include "Vector2.h"
 #include <gdiplus.h>
 
@@ -27,7 +28,9 @@ public:
 	void RenderOnScreen(HDC);
 
 public:
-	void Render(Gdiplus::Image*, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void RenderImage(Gdiplus::Image*, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void RenderText(const TextInfo&, const Utility::Vector2&) const;
+	Utility::Vector2 GetTextArea(const TextInfo&) const;
 
 public:
 	void BeginRender();

@@ -9,7 +9,7 @@ Sprite::Sprite(const Sprite& other) : Sprite() {
 }
 
 void Sprite::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
-	GameDirector::GetGameDirector().GetRenderManager().Render(m_pBitmap, pos, scale, angle);
+	GameDirector::GetGameDirector().GetRenderManager().RenderImage(m_pBitmap, pos, scale, angle);
 }
 
 bool Sprite::LoadSprite(const LPWSTR name) {

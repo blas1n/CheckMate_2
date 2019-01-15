@@ -7,15 +7,15 @@ class Object;
 
 class IComponent {
 private:
-	const Object* m_pEntity;
+	Object* m_pEntity;
 
-protected:
-	const Object& GetEntity() const noexcept {
+public:
+	Object& GetEntity() const noexcept {
 		return *m_pEntity;
 	}
 
 public:
-	IComponent(const Object* entity)
+	IComponent(Object* entity)
 		: m_pEntity(entity) {}
 
 	virtual ~IComponent() = default;

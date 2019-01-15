@@ -23,7 +23,7 @@
     <ProjectGuid>{C3FEAE82-239A-4997-8F04-6C8742B145C0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CheckMate</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,6 +106,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -148,6 +149,9 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="TextRenderer.cpp" />
+    <ClCompile Include="Title.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -166,6 +170,10 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="TextRenderer.h" />
+    <ClInclude Include="Title.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />

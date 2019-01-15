@@ -4,8 +4,8 @@
 
 Renderer::Renderer(Object* entity)
 	: IComponent(entity),
-	m_sprite(),
-	m_transform(GetEntity().GetComponent<Transform>()) {}
+	m_transform(GetEntity().GetComponent<Transform>()),
+	m_sprite() {}
 
 void Renderer::Init() {}
 

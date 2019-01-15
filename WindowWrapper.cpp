@@ -2,6 +2,8 @@
 #include "SettingValue.h"
 #include "Set.hpp"
 
+WindowWrapper* WindowWrapper::self = nullptr;
+
 void WindowWrapper::Init(HINSTANCE hInstance) {
 	m_hInstance = hInstance;
 
@@ -22,7 +24,7 @@ void WindowWrapper::Init(HINSTANCE hInstance) {
 	GetClientRect(m_hWnd, &wndRect);
 	m_pRenderManager->SetWndRect(wndRect);
 
-	SetWindowLongPtr(m_hWnd, GWLP_USERDATA, reinterpret_cast<LONG>(this));
+	self = this;
 }
 
 void WindowWrapper::Release() noexcept {
@@ -51,7 +53,6 @@ int WindowWrapper::Run(HINSTANCE hInstance) {
 }
 
 LRESULT CALLBACK WindowWrapper::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-	auto self = reinterpret_cast<WindowWrapper*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
 	return (self) ? (self->RealWndProc(hWnd, msg, wParam, lParam)) : DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
@@ -62,9 +63,12 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 	
 	switch (msg) {
 	case WM_PAINT:
-		hDC = BeginPaint(hWnd, &ps);
-		m_pRenderManager->RenderOnScreen(hDC);
-		EndPaint(hWnd, &ps);
+		if (m_pRenderManager) {
+			hDC = BeginPaint(hWnd, &ps);
+			m_pRenderManager->RenderOnScreen(hDC);
+			EndPaint(hWnd, &ps);
+		}
+
 		return 0;
 
 	case WM_MOVE: case WM_SIZE:
@@ -73,7 +77,9 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 		return 0;
 
 	case WM_MOUSEMOVE:
-		m_pInputManager->SetMousePos(Utility::Vector2(LOWORD(lParam), HIWORD(lParam)));
+		if (m_pRenderManager)
+			m_pInputManager->SetMousePos(Utility::Vector2(LOWORD(lParam), HIWORD(lParam)));
+
 		return 0;
 
 	case WM_DESTROY:

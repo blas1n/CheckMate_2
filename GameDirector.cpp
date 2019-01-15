@@ -3,7 +3,8 @@
 #include "Time.h"
 
 GameDirector::GameDirector()
-	: m_pSceneManager(std::make_unique<SceneManager>()),
+	: WindowWrapper(),
+	m_pSceneManager(std::make_unique<SceneManager>()),
 	m_frameInterval(10) {}
 
 void GameDirector::Process() {

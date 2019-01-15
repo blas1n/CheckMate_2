@@ -76,8 +76,23 @@
     <Filter Include="Game\Transform">
       <UniqueIdentifier>{743376c1-4dd9-47ac-8d0a-c22f2cb4b48a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework\Sprite">
+    <Filter Include="Framework\Utility\String">
+      <UniqueIdentifier>{f80655c4-8281-4421-81a4-6bcfe36c6d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Drawable Object">
       <UniqueIdentifier>{3a44d1b7-45f1-412d-9352-9fb773e94f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Drawable Object\Sprite">
+      <UniqueIdentifier>{415c04cf-a21a-4440-9d7d-64062242081b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Drawable Object\Text">
+      <UniqueIdentifier>{1b486d93-d4ed-486d-960a-78a079336693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\TextRenderer">
+      <UniqueIdentifier>{3a8caaf8-abf8-4bfd-8bc7-e10119145e35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Title">
+      <UniqueIdentifier>{4edc2560-5253-425c-974e-564484a0ebed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +142,16 @@
       <Filter>Framework\MiddleWare\RenderManager</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>Framework\Sprite</Filter>
+      <Filter>Framework\Drawable Object\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Framework\Drawable Object\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>Game\TextRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Game\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,8 +209,20 @@
     <ClInclude Include="IComponent.h">
       <Filter>Framework\IComponent</Filter>
     </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Framework\Utility\String</Filter>
+    </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>Framework\Sprite</Filter>
+      <Filter>Framework\Drawable Object\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Framework\Drawable Object\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Game\TextRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Game\Title</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
