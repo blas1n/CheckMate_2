@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{392fe189-20f4-46b7-a554-f334de067050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\EntryPoint">
+      <UniqueIdentifier>{882af268-d073-42e3-a485-2ce5ffa2656c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Director">
+      <UniqueIdentifier>{32ffdc55-5625-45f4-b0ca-59b4d47e0fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Setting">
+      <UniqueIdentifier>{47a43d55-3126-4fe4-864b-c20dbb273fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Time">
+      <UniqueIdentifier>{2ade1142-8e1d-4e63-96c9-803726f8108f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene">
+      <UniqueIdentifier>{0f21f6a3-38b8-4da3-ae39-5dad4287f8a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\SceneManager">
+      <UniqueIdentifier>{276dc578-df80-4e26-8b82-be7d97c08f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Setting\SettingValue">
+      <UniqueIdentifier>{2a650f6d-5b38-4207-beb2-356312473dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{170dcd2b-3955-424b-95c1-31c3233e60ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{e54d87d9-38a1-415a-b17e-5bb43128e3c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{9e14cb4b-ad67-4700-a962-964630a741ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Utility">
+      <UniqueIdentifier>{28695e42-ad07-4bab-8cbd-18440c9eefed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object">
+      <UniqueIdentifier>{98aa1d1c-3274-4079-947c-83a83b6da6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Director\GameDirector">
+      <UniqueIdentifier>{83104548-dc48-4b80-b567-06aa28771550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Director\WindowWrapper">
+      <UniqueIdentifier>{99cc2b57-740e-4015-b2be-8b8f54369e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene\Scene">
+      <UniqueIdentifier>{bceb8dbd-0584-4b27-85b3-727fbe9ce34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Utility\Vector2">
+      <UniqueIdentifier>{5f080c02-e346-467f-b7a6-207d77d327d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Utility\Math">
+      <UniqueIdentifier>{1fe2c329-7b46-4aa7-9033-0efc72fe4550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\MiddleWare">
+      <UniqueIdentifier>{f744ca80-3197-4c22-8fa7-46757767bdc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\MiddleWare\InputManager">
+      <UniqueIdentifier>{cdd44b9c-72d5-45fb-8a66-0b6f235d2eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\MiddleWare\RenderManager">
+      <UniqueIdentifier>{f0e5520c-93f4-4f12-8ce7-5d31c4a1859c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\IComponent">
+      <UniqueIdentifier>{c4f37850-cfba-42d4-a71d-b60f1583db50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{9e9a050f-1fcd-4d7e-aa4c-a3ead15cf359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Renderer">
+      <UniqueIdentifier>{de224b73-708a-482b-941a-3b9068710a4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Transform">
+      <UniqueIdentifier>{743376c1-4dd9-47ac-8d0a-c22f2cb4b48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Sprite">
+      <UniqueIdentifier>{3a44d1b7-45f1-412d-9352-9fb773e94f25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Framework\EntryPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Framework\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Framework\Scene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingValue.cpp">
+      <Filter>Setting\SettingValue</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework\Scene\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Framework\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDirector.cpp">
+      <Filter>Framework\Director\GameDirector</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowWrapper.cpp">
+      <Filter>Framework\Director\WindowWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Framework\MiddleWare\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Game\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Game\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Framework\Utility\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Framework\Utility\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>Framework\MiddleWare\RenderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Framework\Sprite</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Time.h">
+      <Filter>Framework\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Framework\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingValue.h">
+      <Filter>Setting\SettingValue</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.hpp">
+      <Filter>Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework\Scene\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDirector.h">
+      <Filter>Framework\Director\GameDirector</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowWrapper.h">
+      <Filter>Framework\Director\WindowWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Framework\MiddleWare\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Game\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Game\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Framework\Utility\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Framework\Utility\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>Framework\MiddleWare\RenderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponent.h">
+      <Filter>Framework\IComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Framework\Sprite</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CheckMate.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Player.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="Logo.ico">
+      <Filter>Resource</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
