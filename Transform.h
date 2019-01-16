@@ -18,14 +18,14 @@ public:
 	virtual void Clear() override;
 
 public:
-	const Utility::Vector2 GetPos() const noexcept;
-	void SetPos(const Utility::Vector2) noexcept;
-	void SetPos(const float, const float) noexcept;
+	const Utility::Vector2& GetPos() const noexcept;
+	void SetPos(const Utility::Vector2&) noexcept;
+	void SetPos(const float&, const float&) noexcept;
 
-	const Utility::Vector2 GetScale() const noexcept;
-	void SetScale(const Utility::Vector2) noexcept;
-	void SetScale(const float, const float) noexcept;
+	const Utility::Vector2& GetScale() const noexcept;
+	void SetScale(const Utility::Vector2&) noexcept;
+	void SetScale(const float&, const float&) noexcept;
 
-	const float GetAngle() const noexcept;
-	void SetAngle(const float) noexcept;
+	const float& GetAngle() const noexcept;
+	void SetAngle(const float&) noexcept;
 };

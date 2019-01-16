@@ -9,6 +9,7 @@
 #include "Renderer.h"
 #include "TextRenderer.h"
 #include "Player.h"
+#include "Button.h"
 #include "Title.h"
 
 void SettingWindow(SettingValue& value) {
@@ -20,6 +21,7 @@ void SettingWindow(SettingValue& value) {
 }
 
 void SettingGame() {
+	const auto& wndRect = GameDirector::GetGameDirector().GetRenderManager().GetWndRect();
 	auto& sceneManager = GameDirector::GetGameDirector().GetSceneManager();
 
 	sceneManager.RegisterScene("Title");
@@ -27,20 +29,22 @@ void SettingGame() {
 	sceneManager.RegisterScene("Stage");
 	sceneManager.RegisterScene("Ending");
 
-	sceneManager.ChangeScene("Title");
+	sceneManager.ReserveScene("Title");
 
 	auto& title = sceneManager.GetScene("Title").AddObject("Title");
+	title.GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
+	title.AddComponent<Title>();
 
 	auto& titleRenderer = title.AddComponent<TextRenderer>();
 	titleRenderer.SetStr(TEXT("CheckMate!"));
 	titleRenderer.SetFont(std::make_shared<Gdiplus::Font>(TEXT("Arial"), 120, Gdiplus::FontStyle::FontStyleBold, Gdiplus::Unit::UnitPixel));
 
-	auto& transform = title.GetComponent<Transform>();
-	transform.SetAngle(50);
-	transform.SetScale(1.5f, 1.5f);
+	auto& startButtonObj = sceneManager.GetScene("Home").AddObject("Button");
+	startButtonObj.GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
 
-	const auto& wndRect = GameDirector::GetGameDirector().GetRenderManager().GetWndRect();
-	transform.SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
-	
-	title.AddComponent<Title>();
+	auto& startButton = startButtonObj.AddComponent<Button>();
+	startButton.SetSize(800, 600);
+	startButton.SetOnClick([]() {GameDirector::GetGameDirector().GetSceneManager().ReserveScene("Stage"); });
+
+	startButtonObj.AddComponent<Renderer>().SetSprite(MAKEINTRESOURCE(IDB_PNG2));
 }

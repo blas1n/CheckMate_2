@@ -6,7 +6,7 @@ void SceneManager::RegisterScene(const string& sceneName) noexcept {
 		m_sceneContainer.emplace(std::make_pair(sceneName, std::make_shared<Scene>()));
 }
 
-void SceneManager::ChangeScene(const string& sceneName) {
+void SceneManager::ReserveScene(const string& sceneName) {
 	auto iter = m_sceneContainer.find(sceneName);
 
 	if (iter != m_sceneContainer.end())

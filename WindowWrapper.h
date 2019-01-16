@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "InputManager.h"
 #include "RenderManager.h"
+#include "UiManager.h"
 
 struct SettingValue;
 
@@ -13,6 +14,7 @@ private:
 
 	std::unique_ptr<InputManager> m_pInputManager;
 	std::unique_ptr<RenderManager> m_pRenderManager;
+	std::unique_ptr<UiManager> m_pUiManager;
 
 protected:
 	WindowWrapper() = default;
@@ -45,6 +47,7 @@ public:
 
 	const InputManager& GetInputManager() const noexcept;
 	const RenderManager& GetRenderManager() const noexcept;
+	const UiManager& GetUiManager() const noexcept;
 
 protected:
 	void BeginRender();

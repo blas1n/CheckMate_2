@@ -19,7 +19,7 @@ private:
 
 public:
 	void RegisterScene(const string& sceneName) noexcept;
-	void ChangeScene(const string& sceneName);
+	void ReserveScene(const string& sceneName);
 	Scene& GetScene(const string& sceneName = "");
 
 public:

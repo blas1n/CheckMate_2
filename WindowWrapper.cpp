@@ -19,6 +19,7 @@ void WindowWrapper::Init(HINSTANCE hInstance) {
 
 	m_pInputManager = std::make_unique<InputManager>();
 	m_pRenderManager = std::make_unique<RenderManager>(m_hWnd);
+	m_pUiManager = std::make_unique<UiManager>();
 
 	RECT wndRect;
 	GetClientRect(m_hWnd, &wndRect);
@@ -85,6 +86,10 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 		m_pInputManager->SetMousePos(Utility::Vector2(LOWORD(lParam), HIWORD(lParam)));
 		return 0;
 
+	case WM_LBUTTONDOWN:
+		m_pUiManager->OnClick();
+		return 0;
+
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		return 0;
@@ -135,6 +140,10 @@ const InputManager& WindowWrapper::GetInputManager() const noexcept {
 
 const RenderManager& WindowWrapper::GetRenderManager() const noexcept {
 	return *m_pRenderManager;
+}
+
+const UiManager& WindowWrapper::GetUiManager() const noexcept {
+	return *m_pUiManager;
 }
 
 void WindowWrapper::BeginRender() {

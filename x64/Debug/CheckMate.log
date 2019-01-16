@@ -1,3 +1,18 @@
-﻿  RenderManager.cpp
-d:\programming\git\checkmate_2\rendermanager.cpp(29): warning C4244: '인수': 'UINT'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  WindowWrapper.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: '인수': '_Ty'에서 'Gdiplus::REAL'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1865): note: 컴파일 중인 함수 템플릿 인스턴스화 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<const wchar_t(&)[6],int,Gdiplus::FontStyle,Gdiplus::Unit>(const wchar_t (&)[6],int &&,Gdiplus::FontStyle &&,Gdiplus::Unit &&)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Ty=Gdiplus::Font
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1866): note: 컴파일 중인 함수 템플릿 인스턴스화 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<const wchar_t(&)[6],int,Gdiplus::FontStyle,Gdiplus::Unit>(const wchar_t (&)[6],int &&,Gdiplus::FontStyle &&,Gdiplus::Unit &&)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Ty=Gdiplus::Font
+          ]
+  d:\programming\git\checkmate_2\set.hpp(40): note: 컴파일 중인 함수 템플릿 인스턴스화 'std::shared_ptr<Gdiplus::Font> std::make_shared<Gdiplus::Font,const wchar_t(&)[6],int,Gdiplus::FontStyle,Gdiplus::Unit>(const wchar_t (&)[6],int &&,Gdiplus::FontStyle &&,Gdiplus::Unit &&)'에 대한 참조를 확인하십시오.
   CheckMate.vcxproj -> D:\Programming\Git\CheckMate_2\x64\Debug\CheckMate.exe
