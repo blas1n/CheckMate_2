@@ -1,5 +1,4 @@
 #include "RenderManager.h"
-#include <iostream>
 
 RenderManager::RenderManager(const HWND hWnd)
 	: m_hWnd(hWnd),
@@ -26,24 +25,32 @@ void RenderManager::RenderOnScreen(HDC hDC) {
 }
 
 void RenderManager::RenderImage(Gdiplus::Image* image, const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
-	Gdiplus::Matrix matrix{};
-	matrix.Scale(scale.x, scale.y);
-	matrix.Translate((pos.x / scale.x) - image->GetWidth() * 0.5f, (pos.y / scale.y) - image->GetHeight() * 0.5f);
-	matrix.RotateAt(-angle, Gdiplus::PointF(image->GetWidth() * 0.5f, image->GetHeight() * 0.5f));
+	Gdiplus::Matrix matrix;
+	GetConversionMatrix(matrix, pos, scale, Utility::Vector2(image->GetWidth(), image->GetHeight()), angle);
 
 	m_pMemGraphics->SetTransform(&matrix);
 	m_pMemGraphics->DrawImage(image, 0, 0, image->GetWidth(), image->GetHeight());
 	m_pMemGraphics->ResetTransform();
 }
 
-void RenderManager::RenderText(const TextInfo& text, const Utility::Vector2& pos) const {
-	m_pMemGraphics->DrawString(text.str.c_str(), static_cast<INT>(text.str.length()), text.font.get(), Gdiplus::PointF(pos.x, pos.y), text.format.get(), &Gdiplus::SolidBrush(text.color));
+void RenderManager::RenderText(const TextInfo& text, const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+	Gdiplus::RectF rect;
+	m_pMemGraphics->MeasureString(text.str.c_str(), static_cast<INT>(text.str.length()), text.font.get(), Gdiplus::PointF(0, 0), text.format.get(), &rect);
+	
+	Gdiplus::Matrix matrix;
+	GetConversionMatrix(matrix, pos, scale, Utility::Vector2(rect.Width, rect.Height), angle);
+	
+	m_pMemGraphics->SetTransform(&matrix);
+	m_pMemGraphics->DrawString(text.str.c_str(), static_cast<INT>(text.str.length()), text.font.get(), Gdiplus::PointF(0, 0), text.format.get(), &Gdiplus::SolidBrush(text.color));
+	m_pMemGraphics->ResetTransform();
 }
 
-Utility::Vector2 RenderManager::GetTextArea(const TextInfo& text) const {
-	Gdiplus::RectF rect;
-	Gdiplus::Graphics::FromHWND(m_hWnd)->MeasureString(text.str.c_str(), static_cast<INT>(text.str.length()), text.font.get(), Gdiplus::PointF(0, 0), text.format.get(), &rect);
-	return Utility::Vector2(rect.Width, rect.Height);
+void RenderManager::GetConversionMatrix(Gdiplus::Matrix& matrix, const Utility::Vector2& pos,
+	const Utility::Vector2& scale, const Utility::Vector2& area, const float& angle) const {
+
+	matrix.Scale(scale.x, scale.y);
+	matrix.Translate(pos.x / scale.x - area.x * 0.5f, pos.y / scale.y - area.y * 0.5f);
+	matrix.RotateAt(-angle, Gdiplus::PointF(area.x * 0.5f, area.y * 0.5f));
 }
 
 void RenderManager::BeginRender() {

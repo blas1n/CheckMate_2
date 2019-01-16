@@ -11,8 +11,7 @@ private:
 	TextInfo m_text;
 
 public:
-	void Draw(const Utility::Vector2&) const;
-	Utility::Vector2 GetTextArea() const;
+	void Draw(const Utility::Vector2&, const Utility::Vector2&, const float&) const;
 
 public:
 	const std::tstring& GetStr() const noexcept;

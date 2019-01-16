@@ -9,11 +9,10 @@ namespace Utility {
 		float x, y;
 
 	public:
-		Vector2() = default;
-		Vector2(const float, const float);
+		Vector2(const float& = 0.0f, const float& = 0.0f);
 
 	public:
-		void Set(const float, const float) noexcept;
+		void Set(const float&, const float&) noexcept;
 
 	public:
 		Vector2 operator+=(const Vector2&) noexcept;

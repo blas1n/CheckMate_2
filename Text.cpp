@@ -1,11 +1,7 @@
 #include "Text.h"
 
-void Text::Draw(const Utility::Vector2& pos) const {
-	GameDirector::GetGameDirector().GetRenderManager().RenderText(m_text, pos);
-}
-
-Utility::Vector2 Text::GetTextArea() const {
-	return GameDirector::GetGameDirector().GetRenderManager().GetTextArea(m_text);
+void Text::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+	GameDirector::GetGameDirector().GetRenderManager().RenderText(m_text, pos, scale, angle);
 }
 
 const std::tstring& Text::GetStr() const noexcept {

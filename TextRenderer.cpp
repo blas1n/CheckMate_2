@@ -10,7 +10,7 @@ TextRenderer::TextRenderer(Object* entity)
 void TextRenderer::Init() {}
 
 void TextRenderer::Update() {
-	m_text.Draw(m_transform.GetPos());
+	m_text.Draw(m_transform.GetPos(), m_transform.GetScale(), m_transform.GetAngle());
 }
 
 void TextRenderer::Clear() {}

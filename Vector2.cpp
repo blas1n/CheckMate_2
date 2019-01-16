@@ -2,10 +2,10 @@
 
 namespace Utility {
 
-	Vector2::Vector2(const float _x, const float _y)
+	Vector2::Vector2(const float& _x, const float& _y)
 		: x(_x), y(_y) {}
 
-	void Vector2::Set(const float x, const float y) noexcept {
+	void Vector2::Set(const float& x, const float& y) noexcept {
 		this->x = x;
 		this->y = y;
 	}

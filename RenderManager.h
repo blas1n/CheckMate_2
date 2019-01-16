@@ -29,8 +29,11 @@ public:
 
 public:
 	void RenderImage(Gdiplus::Image*, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
-	void RenderText(const TextInfo&, const Utility::Vector2&) const;
-	Utility::Vector2 GetTextArea(const TextInfo&) const;
+	void RenderText(const TextInfo&, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+
+private:
+	void GetConversionMatrix(Gdiplus::Matrix&, const Utility::Vector2&,
+		const Utility::Vector2&, const Utility::Vector2&, const float&) const;
 
 public:
 	void BeginRender();

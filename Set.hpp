@@ -27,21 +27,20 @@ void SettingGame() {
 	sceneManager.RegisterScene("Stage");
 	sceneManager.RegisterScene("Ending");
 
-	sceneManager.ReserveChangeScene("Title");
-
-	auto& player = sceneManager.GetScene("Title").AddObject("Player", Utility::Vector2(500, 200), Utility::Vector2(0.3f, 0.3f));
-	player.AddComponent<Renderer>().SetSprite(MAKEINTRESOURCE(IDB_PNG1));
-	player.AddComponent<Player>();
+	sceneManager.ChangeScene("Title");
 
 	auto& title = sceneManager.GetScene("Title").AddObject("Title");
 
 	auto& titleRenderer = title.AddComponent<TextRenderer>();
 	titleRenderer.SetStr(TEXT("CheckMate!"));
-	titleRenderer.SetFont(std::make_shared<Gdiplus::Font>(TEXT("Arial"), 80, Gdiplus::FontStyle::FontStyleBold, Gdiplus::Unit::UnitPixel));
+	titleRenderer.SetFont(std::make_shared<Gdiplus::Font>(TEXT("Arial"), 120, Gdiplus::FontStyle::FontStyleBold, Gdiplus::Unit::UnitPixel));
 
-	auto wndRect = GameDirector::GetGameDirector().GetRenderManager().GetWndRect();
-	auto area = titleRenderer.GetText().GetTextArea();
-	title.GetComponent<Transform>().SetPos((wndRect.right / 2) - (area.x / 2), (wndRect.bottom / 2) - (area.y / 2));
+	auto& transform = title.GetComponent<Transform>();
+	transform.SetAngle(50);
+	transform.SetScale(1.5f, 1.5f);
 
+	const auto& wndRect = GameDirector::GetGameDirector().GetRenderManager().GetWndRect();
+	transform.SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
+	
 	title.AddComponent<Title>();
 }

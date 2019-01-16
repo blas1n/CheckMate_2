@@ -10,7 +10,7 @@ void Title::Init() {}
 
 void Title::Update() {
 	if (m_inputManager.GetAnyKey())
-		GameDirector::GetGameDirector().GetSceneManager().ReserveChangeScene("Home");
+		GameDirector::GetGameDirector().GetSceneManager().ChangeScene("Home");
 }
 
 void Title::Clear() {}
