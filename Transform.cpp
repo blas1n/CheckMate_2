@@ -43,4 +43,7 @@ const float Transform::GetAngle() const noexcept {
 
 void Transform::SetAngle(const float angle) noexcept {
 	m_angle = angle;
+
+	while (m_angle >= 360)
+		m_angle -= 360;
 }

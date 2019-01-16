@@ -17,9 +17,15 @@ public:
 
 private:
 	Utility::Vector2 m_mousePos;
+	int m_inputKeyNum;
 
 public:
 	bool GetKey(Key key) const noexcept;
+	bool GetAnyKey() const noexcept;
 	Utility::Vector2 GetMousePos() const noexcept;
+	
+	void OnKeyDown() noexcept;
+	void OnKeyUp() noexcept;
+
 	void SetMousePos(Utility::Vector2) noexcept;
 };

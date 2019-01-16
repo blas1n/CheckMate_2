@@ -63,12 +63,9 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 	
 	switch (msg) {
 	case WM_PAINT:
-		if (m_pRenderManager) {
-			hDC = BeginPaint(hWnd, &ps);
-			m_pRenderManager->RenderOnScreen(hDC);
-			EndPaint(hWnd, &ps);
-		}
-
+		hDC = BeginPaint(hWnd, &ps);
+		m_pRenderManager->RenderOnScreen(hDC);
+		EndPaint(hWnd, &ps);
 		return 0;
 
 	case WM_MOVE: case WM_SIZE:
@@ -76,10 +73,16 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 		m_pRenderManager->SetWndRect(wndRect);
 		return 0;
 
-	case WM_MOUSEMOVE:
-		if (m_pRenderManager)
-			m_pInputManager->SetMousePos(Utility::Vector2(LOWORD(lParam), HIWORD(lParam)));
+	case WM_KEYDOWN:
+		m_pInputManager->OnKeyDown();
+		return 0;
 
+	case WM_KEYUP:
+		m_pInputManager->OnKeyUp();
+		return 0;
+
+	case WM_MOUSEMOVE:
+		m_pInputManager->SetMousePos(Utility::Vector2(LOWORD(lParam), HIWORD(lParam)));
 		return 0;
 
 	case WM_DESTROY:

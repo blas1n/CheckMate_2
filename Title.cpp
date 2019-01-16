@@ -9,9 +9,7 @@ Title::Title(Object* entity)
 void Title::Init() {}
 
 void Title::Update() {
-	using Key = InputManager::Key;
-
-	if (m_inputManager.GetKey(Key::Space))
+	if (m_inputManager.GetAnyKey())
 		GameDirector::GetGameDirector().GetSceneManager().ReserveChangeScene("Home");
 }
 
