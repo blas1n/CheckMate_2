@@ -7,19 +7,22 @@
 
 class Sprite {
 private:
-	Gdiplus::Bitmap* m_pBitmap;
+	std::unique_ptr<Gdiplus::Bitmap> m_pBitmap;
 	LPWSTR m_name;
 
 public:
 	Sprite() = default;
-	Sprite(const LPWSTR);
+	Sprite(const LPWSTR&);
 	Sprite(const Sprite&);
 
 public:
 	void Draw(const Utility::Vector2&, const Utility::Vector2&, const float&) const;
 
 public:
-	bool LoadSprite(const LPWSTR name);
+	void ReserveSprite(const LPWSTR& name) noexcept;
+	bool LoadSprite() noexcept;
+	void UnloadSprite() noexcept;
+
 	LPWSTR GetName() const noexcept;
 	bool Empty() const noexcept;
 };

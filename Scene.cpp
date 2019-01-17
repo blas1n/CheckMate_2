@@ -18,7 +18,7 @@ void Scene::Clear() {
 
 Object& Scene::FindObject(const std::string& name) const {
 	for (auto& iter : m_objects) {
-		if (iter.GetName().compare(name))
+		if (!iter.GetName().compare(name))
 			return const_cast<Object&>(iter);
 	}
 

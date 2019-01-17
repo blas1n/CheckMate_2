@@ -1,16 +1,17 @@
-#include "Title.h"
+#include "Ending.h"
 #include "GameDirector.h"
+#include "InputManager.h"
 #include "SceneManager.h"
 
-Title::Title(Object* entity)
+Ending::Ending(Object* entity)
 	: IComponent(entity),
 	m_inputManager(GameDirector::GetGameDirector().GetInputManager()) {}
 
-void Title::Init() {}
+void Ending::Init() {}
 
-void Title::Update() {
+void Ending::Update() {
 	if (m_inputManager.GetAnyKey())
 		GameDirector::GetGameDirector().GetSceneManager().ReserveScene("Home");
 }
 
-void Title::Clear() {}
+void Ending::Clear() {}

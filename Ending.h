@@ -1,15 +1,16 @@
 #pragma once
 
 #include "IComponent.h"
+#include "Object.h"
 
 class InputManager;
 
-class Title : public IComponent {
+class Ending : public IComponent {
 private:
 	const InputManager& m_inputManager;
 
 public:
-	Title(Object*);
+	Ending(Object*);
 
 public:
 	virtual void Init() override;

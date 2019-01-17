@@ -91,14 +91,14 @@
     <Filter Include="Game\TextRenderer">
       <UniqueIdentifier>{3a8caaf8-abf8-4bfd-8bc7-e10119145e35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Title">
-      <UniqueIdentifier>{4edc2560-5253-425c-974e-564484a0ebed}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Button">
       <UniqueIdentifier>{db5c0fc9-ed21-4bc5-8ba3-74169c70ab7b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Framework\MiddleWare\UiManager">
       <UniqueIdentifier>{8d54c847-e557-445c-9777-0c3f257c72f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Ending">
+      <UniqueIdentifier>{f892c9bf-03b6-4258-b715-06bcf239e1bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -156,14 +156,14 @@
     <ClCompile Include="TextRenderer.cpp">
       <Filter>Game\TextRenderer</Filter>
     </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>Game\Title</Filter>
-    </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Game\Button</Filter>
     </ClCompile>
     <ClCompile Include="UiManager.cpp">
       <Filter>Framework\MiddleWare\UiManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Ending.cpp">
+      <Filter>Game\Ending</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,9 +233,6 @@
     <ClInclude Include="TextRenderer.h">
       <Filter>Game\TextRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>Game\Title</Filter>
-    </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Game\Button</Filter>
     </ClInclude>
@@ -244,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="IGui.h">
       <Filter>Framework\IComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Ending.h">
+      <Filter>Game\Ending</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -258,7 +258,10 @@
     <Image Include="Logo.ico">
       <Filter>Resource</Filter>
     </Image>
-    <Image Include="StartButton.png">
+    <Image Include="Start.png">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="Background.png">
       <Filter>Resource</Filter>
     </Image>
   </ItemGroup>

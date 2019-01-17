@@ -7,18 +7,22 @@ Renderer::Renderer(Object* entity)
 	m_transform(GetEntity().GetComponent<Transform>()),
 	m_sprite() {}
 
-void Renderer::Init() {}
+void Renderer::Init() {
+	m_sprite.LoadSprite();
+}
 
 void Renderer::Update() {
 	m_sprite.Draw(m_transform.GetPos(), m_transform.GetScale(), m_transform.GetAngle());
 }
 
-void Renderer::Clear() {}
+void Renderer::Clear() {
+	m_sprite.UnloadSprite();
+}
 
 const Sprite& Renderer::GetSprite() const noexcept {
 	return m_sprite;
 }
 
-bool Renderer::SetSprite(LPWSTR id) noexcept {
-	return m_sprite.LoadSprite(id);
+void Renderer::SetSprite(const LPWSTR& id) noexcept {
+	m_sprite.ReserveSprite(id);
 }

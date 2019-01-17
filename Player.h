@@ -1,9 +1,7 @@
 #pragma once
 
-#include "Object.h"
-#include "Sprite.h"
-#include "Renderer.h"
 #include "IComponent.h"
+#include "Object.h"
 
 class InputManager;
 class Transform;

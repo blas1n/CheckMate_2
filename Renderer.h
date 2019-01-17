@@ -20,5 +20,5 @@ public:
 
 public:
 	const Sprite& GetSprite() const noexcept;
-	bool SetSprite(LPWSTR) noexcept;
+	void SetSprite(const LPWSTR&) noexcept;
 };

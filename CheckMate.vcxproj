@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Ending.cpp" />
     <ClCompile Include="GameDirector.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,7 +153,6 @@
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
-    <ClCompile Include="Title.cpp" />
     <ClCompile Include="UiManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Ending.h" />
     <ClInclude Include="GameDirector.h" />
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IGui.h" />
@@ -177,7 +178,6 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TextRenderer.h" />
-    <ClInclude Include="Title.h" />
     <ClInclude Include="UiManager.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Renderer.h" />
@@ -196,9 +196,10 @@
     <ResourceCompile Include="CheckMate.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Background.png" />
     <Image Include="Logo.ico" />
     <Image Include="Player.png" />
-    <Image Include="StartButton.png" />
+    <Image Include="Start.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

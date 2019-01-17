@@ -19,4 +19,4 @@ SettingValue::SettingValue()
 	hWndParent(nullptr),
 	hMenu(nullptr),
 	lpParam(nullptr),
-	nCmdShow(SW_SHOW) {}
+	nCmdShow(SW_SHOWMAXIMIZED) {}
