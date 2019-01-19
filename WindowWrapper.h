@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "RenderManager.h"
 #include "UiManager.h"
+#include <thread>
 
 struct SettingValue;
 
@@ -15,6 +16,8 @@ private:
 	std::unique_ptr<InputManager> m_pInputManager;
 	std::unique_ptr<RenderManager> m_pRenderManager;
 	std::unique_ptr<UiManager> m_pUiManager;
+
+	std::thread m_uiThread;
 
 protected:
 	WindowWrapper() = default;
@@ -47,7 +50,7 @@ public:
 
 	const InputManager& GetInputManager() const noexcept;
 	const RenderManager& GetRenderManager() const noexcept;
-	const UiManager& GetUiManager() const noexcept;
+	UiManager& GetUiManager() const noexcept;
 
 protected:
 	void BeginRender();

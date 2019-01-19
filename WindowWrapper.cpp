@@ -26,9 +26,13 @@ void WindowWrapper::Init(HINSTANCE hInstance) {
 	m_pRenderManager->SetWndRect(wndRect);
 
 	self = this;
+
+	m_uiThread = std::thread(&UiManager::UiLoop, m_pUiManager.get());
 }
 
 void WindowWrapper::Release() noexcept {
+	m_pUiManager->End();
+	m_uiThread.join();
 	DestroyWindow(m_hWnd);
 }
 
@@ -87,7 +91,7 @@ LRESULT CALLBACK WindowWrapper::RealWndProc(HWND hWnd, UINT msg, WPARAM wParam, 
 		return 0;
 
 	case WM_LBUTTONDOWN:
-		m_pUiManager->OnClick();
+		m_pUiManager->OnClick(m_pInputManager->GetMousePos());
 		return 0;
 
 	case WM_DESTROY:
@@ -142,7 +146,7 @@ const RenderManager& WindowWrapper::GetRenderManager() const noexcept {
 	return *m_pRenderManager;
 }
 
-const UiManager& WindowWrapper::GetUiManager() const noexcept {
+UiManager& WindowWrapper::GetUiManager() const noexcept {
 	return *m_pUiManager;
 }
 
