@@ -26,15 +26,13 @@ void GameEntry() {
 	auto& endScene = sceneManager.GetScene("Ending");
 
 	{
-		auto& backGround = homeScene.AddObject("Background").AddComponent<Renderer>();
-		backGround.SetSprite(MAKEINTRESOURCE(IDB_PNG3));
-		backGround.GetEntity().GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
+		homeScene.AddObject("Background").AddComponent<Renderer>(MAKEINTRESOURCE(IDB_PNG3)).GetEntity().GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
 
 		auto& title = homeScene.AddObject("Title").AddComponent<TextRenderer>();
 		title.SetStr(TEXT("CheckMate!"));
 		title.SetFont(std::make_shared<Gdiplus::Font>(TEXT("Linden Hill"), 270, Gdiplus::FontStyle::FontStyleBold, Gdiplus::Unit::UnitPixel));
 
-		auto& startButton = homeScene.AddObject("Button").AddComponent<Button>();;
+		auto& startButton = homeScene.AddObject("Button").AddComponent<Button>();
 		startButton.SetSize(650, 170);
 		startButton.SetOnClick([]() {GameDirector::GetGameDirector().GetSceneManager().ReserveScene("Stage"); });
 		startButton.GetEntity().AddComponent<Renderer>().SetSprite(MAKEINTRESOURCE(IDB_PNG2));
@@ -44,10 +42,7 @@ void GameEntry() {
 	}
 
 	{
-		auto& backGround = endScene.AddObject("Background").AddComponent<Renderer>();
-		backGround.SetSprite(MAKEINTRESOURCE(IDB_PNG3));
-		backGround.GetEntity().GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
-		backGround.GetEntity().AddComponent<Ending>();
+		endScene.AddObject("Background").AddComponent<Renderer>(MAKEINTRESOURCE(IDB_PNG3)).GetEntity().AddComponent<Ending>().GetEntity().GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f);
 
 		auto& clearCaption = endScene.AddObject("Clear Caption").AddComponent<TextRenderer>();
 		clearCaption.SetStr(TEXT("0 Stage Clear!!"));

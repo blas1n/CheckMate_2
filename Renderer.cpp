@@ -7,6 +7,11 @@ Renderer::Renderer(Object* entity)
 	m_transform(GetEntity().GetComponent<Transform>()),
 	m_sprite() {}
 
+Renderer::Renderer(Object* entity, const LPWSTR& name)
+	: IComponent(entity),
+	m_transform(GetEntity().GetComponent<Transform>()),
+	m_sprite(name) {}
+
 void Renderer::Init() {
 	m_sprite.LoadSprite();
 }

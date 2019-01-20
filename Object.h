@@ -36,11 +36,11 @@ public:
 		throw;
 	}
 
-	template <class ComponentType>
-	ComponentType& AddComponent() {
+	template <class ComponentType, class... Args>
+	ComponentType& AddComponent(Args&&... args) {
 		static_assert(std::is_base_of<IComponent, ComponentType>::value, "ComponentType is not Component");
 
-		m_components.emplace_back(std::unique_ptr<ComponentType>(new ComponentType(this)));
+		m_components.emplace_back(std::unique_ptr<ComponentType>(new ComponentType(this, std::forward<Args>(args)...)));
 		return *(static_cast<ComponentType*>(m_components.back().get()));
 	}
 };

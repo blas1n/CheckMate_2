@@ -1,11 +1,11 @@
 #include "Transform.h"
 #include "GameDirector.h"
 
-Transform::Transform(Object* entity, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle)
+Transform::Transform(Object* entity)
 	: IComponent(entity),
-	m_pos(pos),
-	m_scale(scale),
-	m_angle(angle) {}
+	m_pos(0, 0),
+	m_scale(1, 1),
+	m_angle(0) {}
 
 void Transform::Init() {}
 

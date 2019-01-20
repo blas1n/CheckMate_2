@@ -10,7 +10,7 @@ private:
 	float m_angle;
 
 public:
-	Transform(Object*, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1.0f, 1.0f), const float = 0.0f);
+	Transform(Object*);
 
 public:
 	virtual void Init() override;

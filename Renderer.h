@@ -12,6 +12,7 @@ private:
 
 public:
 	Renderer(Object*);
+	Renderer(Object*, const LPWSTR&);
 
 public:
 	virtual void Init() override;
