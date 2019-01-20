@@ -2,13 +2,20 @@
 #include "Button.h"
 
 void UiManager::UiLoop() noexcept {
+	Utility::Vector2 pos;
+
 	while (true) {
-		while (IsEmpty()) {
-			if (isEnd) return;
+		{
+			std::unique_lock<std::mutex> lock(m_uiMutex);
+			cv.wait(lock, [&] { return (m_isEnd || !m_waitingQueue.empty()); });
+
+			if (m_isEnd) return;
+
+			pos = m_waitingQueue.front();
+			m_waitingQueue.pop();
 		}
 
-		auto pos = Peak();
-		Dequeue();
+		std::lock_guard<std::mutex> lock(m_buttonMutex);
 
 		for (auto& button : m_buttons) {
 			if (!button->IsClick(pos)) continue;
@@ -20,33 +27,24 @@ void UiManager::UiLoop() noexcept {
 }
 
 void UiManager::OnClick(const Utility::Vector2& pos) {
-	Enqueue(pos);
+	{
+		std::lock_guard<std::mutex> lock(m_uiMutex);
+		m_waitingQueue.push(pos);
+	}
+
+	cv.notify_one();
 }
 
 void UiManager::AddButton(Button* pButton) {
+	std::lock_guard<std::mutex> lock(m_buttonMutex);
 	m_buttons.emplace_back(pButton);
 }
 
 void UiManager::End() {
-	isEnd = true;
-}
+	{
+		std::lock_guard<std::mutex> lock(m_uiMutex);
+		m_isEnd = true;
+	}
 
-void UiManager::Enqueue(const Utility::Vector2& elem) {
-	std::lock_guard<std::mutex> lock(m_mutex);
-	m_waitingQueue.push(elem);
-}
-
-void UiManager::Dequeue() {
-	std::lock_guard<std::mutex> lock(m_mutex);
-	m_waitingQueue.pop();
-}
-
-bool UiManager::IsEmpty() {
-	std::lock_guard<std::mutex> lock(m_mutex);
-	return m_waitingQueue.empty();
-}
-
-Utility::Vector2& UiManager::Peak() {
-	std::lock_guard<std::mutex> lock(m_mutex);
-	return m_waitingQueue.front();
+	cv.notify_all();
 }

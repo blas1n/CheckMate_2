@@ -11,8 +11,11 @@ class UiManager {
 private:
 	std::queue<Utility::Vector2> m_waitingQueue;
 	std::list<Button*> m_buttons;
-	std::mutex m_mutex;
-	bool isEnd;
+	bool m_isEnd;
+
+	std::condition_variable cv;
+	std::mutex m_uiMutex;
+	std::mutex m_buttonMutex;
 
 public:
 	void UiLoop() noexcept;
@@ -23,11 +26,5 @@ public:
 
 public:
 	void End();
-
-private:
-	void Enqueue(const Utility::Vector2&);
-	void Dequeue();
-	bool IsEmpty();
-	Utility::Vector2& Peak();
 };
 
