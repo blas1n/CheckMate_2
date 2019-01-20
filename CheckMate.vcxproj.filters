@@ -100,6 +100,9 @@
     <Filter Include="Game\Ending">
       <UniqueIdentifier>{f892c9bf-03b6-4258-b715-06bcf239e1bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Setting\GameEntry">
+      <UniqueIdentifier>{9e80f95b-2b4b-4b24-a278-06a32817ff4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -165,6 +168,9 @@
     <ClCompile Include="Ending.cpp">
       <Filter>Game\Ending</Filter>
     </ClCompile>
+    <ClCompile Include="GameEntry.cpp">
+      <Filter>Setting\GameEntry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
@@ -175,9 +181,6 @@
     </ClInclude>
     <ClInclude Include="SettingValue.h">
       <Filter>Setting\SettingValue</Filter>
-    </ClInclude>
-    <ClInclude Include="Set.hpp">
-      <Filter>Setting</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header</Filter>
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="Ending.h">
       <Filter>Game\Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntry.h">
+      <Filter>Setting\GameEntry</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

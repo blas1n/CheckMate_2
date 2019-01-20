@@ -145,6 +145,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Ending.cpp" />
     <ClCompile Include="GameDirector.cpp" />
+    <ClCompile Include="GameEntry.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Ending.h" />
     <ClInclude Include="GameDirector.h" />
+    <ClInclude Include="GameEntry.h" />
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IGui.h" />
     <ClInclude Include="InputManager.h" />
@@ -184,7 +186,6 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Set.hpp" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SettingValue.h" />

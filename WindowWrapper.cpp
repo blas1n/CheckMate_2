@@ -1,17 +1,13 @@
 #include "WindowWrapper.h"
 #include "SettingValue.h"
-#include "Set.hpp"
+#include "GameEntry.h"
 
 WindowWrapper* WindowWrapper::self = nullptr;
 
 void WindowWrapper::Init(HINSTANCE hInstance) {
 	m_hInstance = hInstance;
 
-	SettingValue value{};
-	value.lpfnWndProc = WndProc;
-	value.hInstance = hInstance;
-
-	SettingWindow(value);
+	SettingValue value(WndProc, hInstance);
 
 	RegisterWndClass(value);
 	CreateWnd(value);
@@ -42,7 +38,7 @@ int WindowWrapper::Run(HINSTANCE hInstance) {
 	MSG msg;
 	memset(&msg, 0, sizeof(msg));
 
-	SettingGame();
+	GameEntry();
 
 	while (msg.message != WM_QUIT) {
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {

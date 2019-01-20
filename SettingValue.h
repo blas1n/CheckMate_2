@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 struct SettingValue {
-	SettingValue();
+	SettingValue(WNDPROC, HINSTANCE);
 
 	UINT					cbSize;
 	UINT					style;

@@ -12,15 +12,7 @@
 #include "Player.h"
 #include "Ending.h"
 
-void SettingWindow(SettingValue& value) {
-	value.lpszClassName = value.lpszMenuName = TEXT("CheckMate");
-
-	value.hbrBackground = reinterpret_cast<HBRUSH>(GetStockObject(WHITE_BRUSH));
-	value.hCursor = LoadCursor(nullptr, IDC_ARROW);
-	value.hIcon = LoadIcon(value.hInstance, MAKEINTRESOURCE(IDI_ICON1));
-}
-
-void SettingGame() {
+void GameEntry() {
 	const auto& wndRect = GameDirector::GetGameDirector().GetRenderManager().GetWndRect();
 	auto& sceneManager = GameDirector::GetGameDirector().GetSceneManager();
 
@@ -31,7 +23,7 @@ void SettingGame() {
 	sceneManager.ReserveScene("Home");
 
 	auto& homeScene = sceneManager.GetScene("Home");
-	auto& endScene = sceneManager.GetScene("Stage");
+	auto& endScene = sceneManager.GetScene("Endin");
 
 	{
 		auto& backGround = homeScene.AddObject("Background").AddComponent<Renderer>();
