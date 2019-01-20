@@ -5,20 +5,15 @@
 GameDirector::GameDirector()
 	: WindowWrapper(),
 	m_pSceneManager(std::make_unique<SceneManager>()),
+	m_pTime(std::make_unique<Time>()),
 	m_frameInterval(10) {}
 
 void GameDirector::Process() {
-	static auto prevFrameTime = static_cast<DWORD>(0);
-
-	if (GetTickCount() - prevFrameTime <= m_frameInterval) return;
-
-	Time::SetDeltaTime(static_cast<float>(GetTickCount() - prevFrameTime) * 0.001f);
+	m_pTime->UpdateDeltaTime();
 
 	BeginRender();
 	m_pSceneManager->Update();
 	EndRender();
-
-	prevFrameTime = GetTickCount();
 }
 
 const GameDirector& GameDirector::GetGameDirector() {
@@ -32,6 +27,10 @@ SceneManager& GameDirector::GetSceneManager() const noexcept {
 
 DWORD GameDirector::GetFrameInterval() const noexcept {
 	return m_frameInterval;
+}
+
+const Time& GameDirector::GetTime() const noexcept {
+	return *m_pTime;
 }
 
 void GameDirector::SetFrameInterval(DWORD frameInterval) noexcept {

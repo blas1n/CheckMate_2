@@ -26,7 +26,7 @@ void RenderManager::RenderOnScreen(HDC hDC) {
 
 void RenderManager::RenderImage(Gdiplus::Image* image, const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
 	Gdiplus::Matrix matrix;
-	GetConversionMatrix(matrix, pos, scale, Utility::Vector2(image->GetWidth(), image->GetHeight()), angle);
+	GetConversionMatrix(matrix, pos, scale, Utility::Vector2(static_cast<const float>(image->GetWidth()), static_cast<const float>(image->GetHeight())), angle);
 
 	m_pMemGraphics->SetTransform(&matrix);
 	m_pMemGraphics->DrawImage(image, 0, 0, image->GetWidth(), image->GetHeight());

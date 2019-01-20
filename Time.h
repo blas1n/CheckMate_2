@@ -3,13 +3,11 @@
 #include "GameDirector.h"
 
 class Time {
-	friend void GameDirector::Process();
-
 private:
-	static float m_deltaTime;
-	static void SetDeltaTime(float);
-
+	float m_deltaTime;
+	
 public:
-	static float GetDeltaTime();
+	float GetDeltaTime() const noexcept;
+	void UpdateDeltaTime() noexcept;
 };
 

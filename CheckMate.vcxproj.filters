@@ -64,9 +64,6 @@
     <Filter Include="Framework\MiddleWare\RenderManager">
       <UniqueIdentifier>{f0e5520c-93f4-4f12-8ce7-5d31c4a1859c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework\IComponent">
-      <UniqueIdentifier>{c4f37850-cfba-42d4-a71d-b60f1583db50}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Player">
       <UniqueIdentifier>{9e9a050f-1fcd-4d7e-aa4c-a3ead15cf359}</UniqueIdentifier>
     </Filter>
@@ -102,6 +99,12 @@
     </Filter>
     <Filter Include="Setting\GameEntry">
       <UniqueIdentifier>{9e80f95b-2b4b-4b24-a278-06a32817ff4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component">
+      <UniqueIdentifier>{c4f37850-cfba-42d4-a71d-b60f1583db50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Component\IComponent">
+      <UniqueIdentifier>{cc92c716-28aa-4153-80f5-6c82aa479cbf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +174,9 @@
     <ClCompile Include="GameEntry.cpp">
       <Filter>Setting\GameEntry</Filter>
     </ClCompile>
+    <ClCompile Include="IComponent.cpp">
+      <Filter>Framework\Component\IComponent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
@@ -221,9 +227,6 @@
     <ClInclude Include="RenderManager.h">
       <Filter>Framework\MiddleWare\RenderManager</Filter>
     </ClInclude>
-    <ClInclude Include="IComponent.h">
-      <Filter>Framework\IComponent</Filter>
-    </ClInclude>
     <ClInclude Include="String.h">
       <Filter>Framework\Utility\String</Filter>
     </ClInclude>
@@ -243,13 +246,16 @@
       <Filter>Framework\MiddleWare\UiManager</Filter>
     </ClInclude>
     <ClInclude Include="IGui.h">
-      <Filter>Framework\IComponent</Filter>
+      <Filter>Framework\Component</Filter>
     </ClInclude>
     <ClInclude Include="Ending.h">
       <Filter>Game\Ending</Filter>
     </ClInclude>
     <ClInclude Include="GameEntry.h">
       <Filter>Setting\GameEntry</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponent.h">
+      <Filter>Framework\Component\IComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

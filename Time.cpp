@@ -1,11 +1,17 @@
 #include "Time.h"
+#include <chrono>
 
-float Time::GetDeltaTime() {
+float Time::GetDeltaTime() const noexcept {
 	return m_deltaTime;
 }
 
-void Time::SetDeltaTime(float deltaTime){
-	m_deltaTime = deltaTime;
-}
+void Time::UpdateDeltaTime() noexcept {
+	using namespace std::chrono;
 
-float Time::m_deltaTime = 0.0f;
+	static auto prevTick = system_clock::now();
+
+	duration<float> sec = system_clock::now() - prevTick;
+	m_deltaTime = sec.count();
+
+	prevTick = system_clock::now();
+}

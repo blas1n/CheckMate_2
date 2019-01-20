@@ -1,7 +1,6 @@
 #pragma once
 
-#include "GameDirector.h"
-#include "Time.h"
+#include <functional>
 
 class Object;
 
@@ -10,18 +9,17 @@ private:
 	Object* m_pEntity;
 
 public:
-	Object& GetEntity() const noexcept {
-		return *m_pEntity;
-	}
-
-public:
-	IComponent(Object* entity)
-		: m_pEntity(entity) {}
-
+	IComponent(Object* entity);
 	virtual ~IComponent() = default;
 
 public:
 	virtual void Init() = 0;
 	virtual void Update() = 0;
 	virtual void Clear() = 0;
+
+public:
+	Object& GetEntity() const noexcept;
+
+protected:
+	float GetDeltaTime();
 };

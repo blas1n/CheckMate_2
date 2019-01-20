@@ -23,7 +23,7 @@ void GameEntry() {
 	sceneManager.ReserveScene("Home");
 
 	auto& homeScene = sceneManager.GetScene("Home");
-	auto& endScene = sceneManager.GetScene("Endin");
+	auto& endScene = sceneManager.GetScene("Ending");
 
 	{
 		auto& backGround = homeScene.AddObject("Background").AddComponent<Renderer>();

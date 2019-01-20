@@ -146,6 +146,7 @@
     <ClCompile Include="Ending.cpp" />
     <ClCompile Include="GameDirector.cpp" />
     <ClCompile Include="GameEntry.cpp" />
+    <ClCompile Include="IComponent.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
