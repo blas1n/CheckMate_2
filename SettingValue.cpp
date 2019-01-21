@@ -14,14 +14,14 @@ SettingValue::SettingValue(WNDPROC wndProc, HINSTANCE hIn)
 
 	TCHAR name[128];
 
-	GetPrivateProfileString(TEXT("Resource"), TEXT("Icon"), nullptr, name, 128, TEXT("D:\\CheckMate\\Set.ini"));
+	GetPrivateProfileString(TEXT("Resource"), TEXT("Icon"), nullptr, name, 127, TEXT("D:\\CheckMate\\Set.ini"));
 
 	if (lstrcmp(name, TEXT("")))
 		hIcon = reinterpret_cast<HICON>(LoadImage(nullptr, name, IMAGE_ICON, 0, 0, LR_LOADFROMFILE));
 	else
 		hIcon = LoadIcon(nullptr, IDI_APPLICATION);
 
-	GetPrivateProfileString(TEXT("Resource"), TEXT("Cursor"), nullptr, name, 128, TEXT("D:\\CheckMate\\Set.ini"));
+	GetPrivateProfileString(TEXT("Resource"), TEXT("Cursor"), nullptr, name, 127, TEXT("D:\\CheckMate\\Set.ini"));
 	
 	if (lstrcmp(name, TEXT("")))
 		hCursor = reinterpret_cast<HCURSOR>(LoadImage(nullptr, name, IMAGE_CURSOR, 0, 0, LR_LOADFROMFILE));

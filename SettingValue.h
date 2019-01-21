@@ -19,7 +19,7 @@ public:
 	HCURSOR					hCursor;
 	HBRUSH					hbrBackground;
 	LPCTSTR					lpszMenuName;
-	TCHAR					lpszClassName[maxNameLen];
+	TCHAR					lpszClassName[maxNameLen + 1];
 
 	DWORD					dwStyle;
 	int						x;
