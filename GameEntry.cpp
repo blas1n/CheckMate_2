@@ -33,7 +33,7 @@ void GameEntry() {
 
 		auto& startButton = homeScene.AddObject("Button").AddComponent<Button>();
 		startButton.SetSize(650, 170);
-		startButton.SetOnClick([]() {GameDirector::GetGameDirector().GetSceneManager().ReserveScene("Stage"); });
+		startButton.SetOnClick([] {GameDirector::GetGameDirector().GetSceneManager().ReserveScene("Stage"); });
 		startButton.GetEntity().AddComponent<Renderer>().SetSprite(TEXT("D:\\CheckMate\\Start.png"));
 
 		title.GetEntity().GetComponent<Transform>().SetPos(wndRect.right * 0.5f, wndRect.bottom * 0.5f - 120);
