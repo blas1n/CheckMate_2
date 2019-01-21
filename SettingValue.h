@@ -3,6 +3,10 @@
 #include "stdafx.h"
 
 struct SettingValue {
+private:
+	static const int maxNameLen = 30;
+
+public:
 	SettingValue(WNDPROC, HINSTANCE);
 
 	UINT					cbSize;
@@ -11,11 +15,11 @@ struct SettingValue {
 	int						cbClsExtra;
 	int						cbWndExtra;
 	HINSTANCE				hInstance;
-	HBRUSH					hbrBackground;
-	HCURSOR					hCursor;
 	HICON					hIcon;
+	HCURSOR					hCursor;
+	HBRUSH					hbrBackground;
 	LPCTSTR					lpszMenuName;
-	LPCTSTR					lpszClassName;
+	TCHAR					lpszClassName[maxNameLen];
 
 	DWORD					dwStyle;
 	int						x;

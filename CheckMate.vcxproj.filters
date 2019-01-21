@@ -28,9 +28,6 @@
     <Filter Include="Game">
       <UniqueIdentifier>{e54d87d9-38a1-415a-b17e-5bb43128e3c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header">
-      <UniqueIdentifier>{9e14cb4b-ad67-4700-a962-964630a741ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Framework\Utility">
       <UniqueIdentifier>{28695e42-ad07-4bab-8cbd-18440c9eefed}</UniqueIdentifier>
     </Filter>
@@ -102,6 +99,9 @@
     </Filter>
     <Filter Include="Framework\Component\IComponent">
       <UniqueIdentifier>{cc92c716-28aa-4153-80f5-6c82aa479cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header">
+      <UniqueIdentifier>{9e14cb4b-ad67-4700-a962-964630a741ff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +186,7 @@
       <Filter>Setting\SettingValue</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>Header</Filter>
+      <Filter>Framework\Header</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Framework\Scene\Scene</Filter>
