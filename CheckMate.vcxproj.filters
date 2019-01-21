@@ -25,9 +25,6 @@
     <Filter Include="Setting\SettingValue">
       <UniqueIdentifier>{2a650f6d-5b38-4207-beb2-356312473dfa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource">
-      <UniqueIdentifier>{170dcd2b-3955-424b-95c1-31c3233e60ab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{e54d87d9-38a1-415a-b17e-5bb43128e3c4}</UniqueIdentifier>
     </Filter>
@@ -188,9 +185,6 @@
     <ClInclude Include="SettingValue.h">
       <Filter>Setting\SettingValue</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -257,24 +251,5 @@
     <ClInclude Include="IComponent.h">
       <Filter>Framework\Component\IComponent</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CheckMate.rc">
-      <Filter>Resource</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Player.png">
-      <Filter>Resource</Filter>
-    </Image>
-    <Image Include="Logo.ico">
-      <Filter>Resource</Filter>
-    </Image>
-    <Image Include="Start.png">
-      <Filter>Resource</Filter>
-    </Image>
-    <Image Include="Background.png">
-      <Filter>Resource</Filter>
-    </Image>
   </ItemGroup>
 </Project>

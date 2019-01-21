@@ -7,7 +7,7 @@ Renderer::Renderer(Object* entity)
 	m_transform(GetEntity().GetComponent<Transform>()),
 	m_sprite() {}
 
-Renderer::Renderer(Object* entity, const LPWSTR& name)
+Renderer::Renderer(Object* entity, const std::tstring& name)
 	: IComponent(entity),
 	m_transform(GetEntity().GetComponent<Transform>()),
 	m_sprite(name) {}
@@ -28,6 +28,6 @@ const Sprite& Renderer::GetSprite() const noexcept {
 	return m_sprite;
 }
 
-void Renderer::SetSprite(const LPWSTR& id) noexcept {
+void Renderer::SetSprite(const std::tstring& id) noexcept {
 	m_sprite.ReserveSprite(id);
 }

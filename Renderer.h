@@ -12,7 +12,7 @@ private:
 
 public:
 	Renderer(Object*);
-	Renderer(Object*, const LPWSTR&);
+	Renderer(Object*, const std::tstring&);
 
 public:
 	virtual void Init() override;
@@ -21,5 +21,5 @@ public:
 
 public:
 	const Sprite& GetSprite() const noexcept;
-	void SetSprite(const LPWSTR&) noexcept;
+	void SetSprite(const std::tstring&) noexcept;
 };

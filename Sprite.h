@@ -4,25 +4,22 @@
 #include "GameDirector.h"
 #include "RenderManager.h"
 #include "Vector2.h"
+#include "String.h"
 
 class Sprite {
 private:
-	std::unique_ptr<Gdiplus::Bitmap> m_pBitmap;
-	LPWSTR m_name;
+	std::unique_ptr<Gdiplus::Image> m_pImage;
+	std::tstring m_name;
 
 public:
-	Sprite() = default;
-	Sprite(const LPWSTR&);
+	explicit Sprite(const std::tstring& = TEXT(""));
 	Sprite(const Sprite&);
 
 public:
 	void Draw(const Utility::Vector2&, const Utility::Vector2&, const float&) const;
 
 public:
-	void ReserveSprite(const LPWSTR& name) noexcept;
-	bool LoadSprite() noexcept;
+	void ReserveSprite(const std::tstring& name) noexcept;
+	void LoadSprite() noexcept;
 	void UnloadSprite() noexcept;
-
-	LPWSTR GetName() const noexcept;
-	bool Empty() const noexcept;
 };

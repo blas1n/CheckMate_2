@@ -191,7 +191,6 @@
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stdafx.h" />
@@ -199,15 +198,6 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="WindowWrapper.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CheckMate.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Background.png" />
-    <Image Include="Logo.ico" />
-    <Image Include="Player.png" />
-    <Image Include="Start.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

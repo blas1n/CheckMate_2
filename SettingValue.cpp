@@ -1,5 +1,4 @@
 #include "SettingValue.h"
-#include "resource.h"
 
 SettingValue::SettingValue(WNDPROC wndProc, HINSTANCE hIn)
 	: cbSize(sizeof(WNDCLASSEX)),
@@ -10,7 +9,7 @@ SettingValue::SettingValue(WNDPROC wndProc, HINSTANCE hIn)
 	hInstance(hIn),
 	hbrBackground(reinterpret_cast<HBRUSH>(GetStockObject(WHITE_BRUSH))),
 	hCursor(LoadCursor(nullptr, IDC_ARROW)),
-	hIcon(LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1))),
+	hIcon(LoadIcon(nullptr, IDI_APPLICATION)),
 	lpszMenuName(TEXT("CheckMate")),
 	lpszClassName(TEXT("CheckMate")),
 	dwStyle(WS_OVERLAPPEDWINDOW),
