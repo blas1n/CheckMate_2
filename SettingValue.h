@@ -4,6 +4,7 @@
 
 struct SettingValue {
 private:
+	static const LPCTSTR fileName;
 	static const int maxNameLen = 30;
 
 public:
