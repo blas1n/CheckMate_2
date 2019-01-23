@@ -1,7 +1,7 @@
 #pragma once
 
 #include <list>
-#include <string>
+#include "String.h"
 #include <memory>
 #include "IComponent.h"
 #include "Vector2.h"
@@ -10,11 +10,11 @@ class Object {
 private:
 	using ComponentList = std::list<std::shared_ptr<IComponent>>;
 
-	std::string m_name;
+	std::tstring m_name;
 	ComponentList m_components;
 
 public:
-	Object(std::string, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1, 1), const float = 0);
+	Object(std::tstring, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1, 1), const float = 0);
 	virtual ~Object() = default;
 
 public:
@@ -23,7 +23,7 @@ public:
 	void Clear();
 
 public:
-	const std::string& GetName() const noexcept;
+	const std::tstring& GetName() const noexcept;
 
 	template <class ComponentType>
 	ComponentType& GetComponent() const {

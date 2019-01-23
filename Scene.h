@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "Object.h"
 #include "Vector2.h"
-#include <string>
+#include "String.h"
 #include <list>
 
 class Scene {
@@ -22,6 +22,6 @@ private:
 	void Clear();
 
 public:
-	Object& FindObject(const std::string& name) const;
-	Object& AddObject(const std::string& name, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1, 1), const float = 0);
+	Object& FindObject(const std::tstring& name) const;
+	Object& AddObject(const std::tstring& name, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1, 1), const float = 0);
 };

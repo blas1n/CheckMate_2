@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameDirector" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAEAAAAEAgAAAAgAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameDirector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowWrapper" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQAAAACCAAAAMQggAAAQQAiAAAAAAJACAiQBAACAc=</HashCode>
+      <FileName>WindowWrapper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Time" Collapsed="true">
+    <Position X="18.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAQAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Time.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneManager" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAEAAAAAAAACAAAAAAAAAAAACAAAAAgAAAI=</HashCode>
+      <FileName>SceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAAAAAAAAAAAARAAAAAAgAAACAABAAAA=</HashCode>
+      <FileName>Scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAQAIAAAgAAAABAAAAACAAAAAAAACAABABAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputManager" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAACAAAAAAAAAAAQAEBIAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>InputManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderManager" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQAAACCAAABBAAFAAhAAAAAAiBAAAAAAAABAgAAE=</HashCode>
+      <FileName>RenderManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UiManager" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAAAAAAAAAAAAIIAAAAgCBAQAAAAAAAAAAIAAAAg=</HashCode>
+      <FileName>UiManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAAAAAAgAAAAAAAAAMAAAAAAAQAAAAAAAAAAE=</HashCode>
+      <FileName>Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Text" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAgAAAAAAIACIAggAAACAAAgAAAAAAAA=</HashCode>
+      <FileName>Text.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IGui" Collapsed="true">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAACAAACAAAAIAAACAAAAAAAAAAACAAJAAAA=</HashCode>
+      <FileName>IGui.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IComponent" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAQAAABAAAAABAAAAAAQAACAABAAAA=</HashCode>
+      <FileName>IComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAACAQhAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderer" Collapsed="true">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAABEAAAAAAAAAAgAAAAAAAAAACCAABAAAA=</HashCode>
+      <FileName>Renderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Transform" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIQEAAAAAAAAECAAAAAAAAwQAAAAAAAAIAACAgBAAAA=</HashCode>
+      <FileName>Transform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextRenderer" Collapsed="true">
+    <Position X="15.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAIAAEAAgAIAAAAIACAAAAAAAAAAAgCAABAAAA=</HashCode>
+      <FileName>TextRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button" Collapsed="true">
+    <Position X="10.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAAAIAAAAAAAAAAAAAAACAAAAAAKAAAAAAAAAAAA=</HashCode>
+      <FileName>Button.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ending" Collapsed="true">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACAAhAAAA=</HashCode>
+      <FileName>Ending.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TextInfo" Collapsed="true">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAACAIAAAAAACCAAAAAAAAAAAA=</HashCode>
+      <FileName>String.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SettingValue" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAABEAEIAAAAQJQAQAAIAASAAEIAgQAEJgAAAAEAA=</HashCode>
+      <FileName>SettingValue.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Utility::Vector2" Collapsed="true">
+    <Position X="20.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBAAEFAAAAQAAEAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Vector2.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

@@ -2,7 +2,7 @@
 #include "Object.h"
 #include "Transform.h"
 
-Object::Object(std::string name, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle)
+Object::Object(std::tstring name, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle)
 	: m_name(name),
 	m_components() {
 
@@ -27,6 +27,6 @@ void Object::Clear() {
 		iter->Clear();
 }
 
-const std::string& Object::GetName() const noexcept {
+const std::tstring& Object::GetName() const noexcept {
 	return m_name;
 }

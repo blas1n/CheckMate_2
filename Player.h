@@ -10,6 +10,9 @@ class Player : public IComponent {
 private:
 	const InputManager& m_inputManager;
 	Transform& m_transform;
+	
+	float m_time;
+	bool m_isClick;
 
 public:
 	Player(Object*);

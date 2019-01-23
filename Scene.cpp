@@ -16,7 +16,7 @@ void Scene::Clear() {
 		iter.Clear();
 }
 
-Object& Scene::FindObject(const std::string& name) const {
+Object& Scene::FindObject(const std::tstring& name) const {
 	for (auto& iter : m_objects) {
 		if (!iter.GetName().compare(name))
 			return const_cast<Object&>(iter);
@@ -25,7 +25,7 @@ Object& Scene::FindObject(const std::string& name) const {
 	throw;
 }
 
-Object& Scene::AddObject(const std::string& name, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle) {
+Object& Scene::AddObject(const std::tstring& name, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle) {
 	m_objects.emplace_back(Object(name, pos, scale, angle));
 	return m_objects.back();
 }
