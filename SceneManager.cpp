@@ -15,10 +15,11 @@ void SceneManager::ReserveScene(const string& sceneName) {
 	else throw;
 }
 
-Scene& SceneManager::GetScene(const string& sceneName) {
-	if (sceneName == "")
-		return *m_currentScene;
+Scene& SceneManager::GetScene() {
+	return *m_currentScene;
+}
 
+Scene& SceneManager::GetScene(const string& sceneName) {
 	auto iter = m_sceneContainer.find(sceneName);
 
 	if (iter == m_sceneContainer.end())

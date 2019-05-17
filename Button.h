@@ -15,11 +15,11 @@ private:
 	ClickFunc m_onClick;
 
 public:
-	Button(Object*);
+	Button(Object* entity);
 
 public:
 	virtual void OnClick() override;
-	bool IsClick(const Utility::Vector2&) const noexcept;
-	void SetOnClick(const ClickFunc&) noexcept;
+	bool IsClick(const Utility::Vector2& pos) const noexcept;
+	void SetOnClick(const ClickFunc& onClick) noexcept;
 };
 

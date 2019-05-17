@@ -16,7 +16,7 @@ public:
 	Sprite(const Sprite&);
 
 public:
-	void Draw(const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const;
 
 public:
 	void ReserveSprite(const std::tstring& name) noexcept;

@@ -64,9 +64,6 @@
     <Filter Include="Game\Renderer">
       <UniqueIdentifier>{de224b73-708a-482b-941a-3b9068710a4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Transform">
-      <UniqueIdentifier>{743376c1-4dd9-47ac-8d0a-c22f2cb4b48a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Framework\Utility\String">
       <UniqueIdentifier>{f80655c4-8281-4421-81a4-6bcfe36c6d4f}</UniqueIdentifier>
     </Filter>
@@ -103,6 +100,9 @@
     <Filter Include="Framework\Header">
       <UniqueIdentifier>{9e14cb4b-ad67-4700-a962-964630a741ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Component\Transform">
+      <UniqueIdentifier>{743376c1-4dd9-47ac-8d0a-c22f2cb4b48a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,7 +136,7 @@
       <Filter>Game\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
-      <Filter>Game\Transform</Filter>
+      <Filter>Framework\Component\Transform</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game\Player</Filter>
@@ -207,7 +207,7 @@
       <Filter>Game\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h">
-      <Filter>Game\Transform</Filter>
+      <Filter>Framework\Component\Transform</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Player</Filter>

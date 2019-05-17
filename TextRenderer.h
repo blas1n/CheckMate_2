@@ -11,7 +11,7 @@ private:
 	const Transform& m_transform;
 
 public:
-	TextRenderer(Object*);
+	TextRenderer(Object* entity);
 
 public:
 	virtual void Init() override;
@@ -26,8 +26,8 @@ public:
 		m_text.SetStr(std::forward<Str>(str));
 	}
 
-	void SetFont(const std::shared_ptr<Gdiplus::Font>&);
-	void SetColor(const Gdiplus::Color&);
-	void SetFormat(const std::shared_ptr<Gdiplus::StringFormat>&);
+	void SetFont(const std::shared_ptr<Gdiplus::Font>& font);
+	void SetColor(const Gdiplus::Color& color);
+	void SetFormat(const std::shared_ptr<Gdiplus::StringFormat>& format);
 };
 

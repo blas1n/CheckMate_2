@@ -24,10 +24,10 @@ protected:
 	virtual ~WindowWrapper() = default;
 
 public:
-	int Run(HINSTANCE);
+	int Run(HINSTANCE hInstance);
 
 private:
-	void Init(HINSTANCE);
+	void Init(HINSTANCE hInstance);
 	void Release() noexcept;
 
 private:

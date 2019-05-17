@@ -10,7 +10,7 @@ private:
 public:
 	IGui(Object* entity)
 		: IComponent(entity),
-	m_size() {}
+		m_size() {}
 
 	virtual ~IGui() = default;
 
@@ -30,7 +30,7 @@ public:
 		m_size = size;
 	}
 
-	void SetSize(const float& x, const float& y) noexcept {
+	void SetSize(const float x, const float y) noexcept {
 		m_size = Utility::Vector2(x, y);
 	}
 };

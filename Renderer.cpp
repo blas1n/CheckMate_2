@@ -7,10 +7,10 @@ Renderer::Renderer(Object* entity)
 	m_transform(GetEntity().GetComponent<Transform>()),
 	m_sprite() {}
 
-Renderer::Renderer(Object* entity, const std::tstring& name)
+Renderer::Renderer(Object* entity, const std::tstring& id)
 	: IComponent(entity),
 	m_transform(GetEntity().GetComponent<Transform>()),
-	m_sprite(name) {}
+	m_sprite(id) {}
 
 void Renderer::Init() {
 	m_sprite.LoadSprite();

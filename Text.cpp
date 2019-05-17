@@ -1,6 +1,6 @@
 #include "Text.h"
 
-void Text::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+void Text::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const {
 	GameDirector::GetGameDirector().GetRenderManager().RenderText(m_text, pos, scale, angle);
 }
 
@@ -18,6 +18,14 @@ const Gdiplus::Color& Text::GetColor() const noexcept {
 
 const Gdiplus::StringFormat& Text::GetFormat() const noexcept {
 	return *m_text.format;
+}
+
+void Text::SetStr(const std::tstring& str) noexcept {
+	m_text.str = str;
+}
+
+void Text::SetStr(std::tstring&& str) noexcept {
+	m_text.str = std::move(str);
 }
 
 void Text::SetFont(const std::shared_ptr<Gdiplus::Font>& font) noexcept {

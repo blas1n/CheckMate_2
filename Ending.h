@@ -10,7 +10,7 @@ private:
 	const InputManager& m_inputManager;
 
 public:
-	Ending(Object*);
+	Ending(Object* entity);
 
 public:
 	virtual void Init() override;

@@ -21,8 +21,8 @@ public:
 	void UiLoop() noexcept;
 
 public:
-	void OnClick(const Utility::Vector2&);
-	void AddButton(Button*);
+	void OnClick(const Utility::Vector2& pos);
+	void AddButton(Button* button);
 
 public:
 	void End();

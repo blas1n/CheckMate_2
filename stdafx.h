@@ -1,6 +1,8 @@
 #pragma once
 
-#ifdef SHOWCONSOLE
+#define SHOWCONSOLE 1
+
+#if SHOWCONSOLE
 #ifdef UNICODE
 #pragma comment(linker, "/entry:wWinMainCRTStartup /subsystem:console") 
 #else
@@ -14,3 +16,8 @@
 #include <tchar.h>
 #include <Ole2.h>
 #include <memory>
+#include <string>
+
+namespace std {
+	using tstring = std::basic_string<TCHAR>;
+}

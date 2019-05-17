@@ -6,11 +6,16 @@ Object::Object(std::tstring name, const Utility::Vector2 pos, const Utility::Vec
 	: m_name(name),
 	m_components() {
 
-	auto& transform = AddComponent<Transform>();
-	transform.SetPos(pos);
-	transform.SetScale(scale);
-	transform.SetAngle(angle);
+	m_transform = std::make_unique<Transform>(this);
+	m_transform->SetPos(pos);
+	m_transform->SetScale(scale);
+	m_transform->SetAngle(angle);
 }
+
+Object::Object(const Object& object)
+	: m_name(object.m_name),
+	m_transform(new Transform(*object.m_transform)),
+	m_components(object.m_components) {}
 
 void Object::Init() {
 	for (auto iter : m_components)

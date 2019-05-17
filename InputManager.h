@@ -27,5 +27,5 @@ public:
 	void OnKeyDown() noexcept;
 	void OnKeyUp() noexcept;
 
-	void SetMousePos(Utility::Vector2) noexcept;
+	void SetMousePos(Utility::Vector2 pos) noexcept;
 };

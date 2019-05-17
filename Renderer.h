@@ -11,8 +11,8 @@ private:
 	const Transform& m_transform;
 
 public:
-	Renderer(Object*);
-	Renderer(Object*, const std::tstring&);
+	Renderer(Object* entity);
+	Renderer(Object* entity, const std::tstring& id);
 
 public:
 	virtual void Init() override;
@@ -21,5 +21,5 @@ public:
 
 public:
 	const Sprite& GetSprite() const noexcept;
-	void SetSprite(const std::tstring&) noexcept;
+	void SetSprite(const std::tstring& id) noexcept;
 };

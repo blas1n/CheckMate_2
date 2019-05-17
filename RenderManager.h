@@ -22,18 +22,18 @@ public:
 
 public:
 	const RECT GetWndRect() const noexcept;
-	void SetWndRect(const RECT) noexcept;
+	void SetWndRect(const RECT rect) noexcept;
 
 public:
-	void RenderOnScreen(HDC);
+	void RenderOnScreen(HDC hDC);
 
 public:
-	void RenderImage(Gdiplus::Image*, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
-	void RenderText(const TextInfo&, const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void RenderImage(Gdiplus::Image* image, const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const;
+	void RenderText(const TextInfo& text, const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const;
 
 private:
-	void GetConversionMatrix(Gdiplus::Matrix&, const Utility::Vector2&,
-		const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void GetConversionMatrix(Gdiplus::Matrix& matrix, const Utility::Vector2& pos,
+		const Utility::Vector2& scale, const Utility::Vector2& area, const float angle) const;
 
 public:
 	void BeginRender();

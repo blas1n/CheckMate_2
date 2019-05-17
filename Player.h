@@ -15,7 +15,7 @@ private:
 	bool m_isClick;
 
 public:
-	Player(Object*);
+	Player(Object* entity);
 
 public:
 	virtual void Init() override;

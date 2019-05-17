@@ -4,13 +4,16 @@
 #include "Vector2.h"
 
 class Transform : public IComponent {
+	using Vector2 = Utility::Vector2;
+
 private:
-	Utility::Vector2 m_pos;
-	Utility::Vector2 m_scale;
+	Vector2 m_pos;
+	Vector2 m_scale;
 	float m_angle;
 
 public:
-	Transform(Object*);
+	Transform(Object*, const Vector2& pos = Vector2(), const Vector2& scale = Vector2(), float angle = 0.0f);
+	Transform(const Transform& transform);
 
 public:
 	virtual void Init() override;
@@ -19,13 +22,13 @@ public:
 
 public:
 	const Utility::Vector2& GetPos() const noexcept;
-	void SetPos(const Utility::Vector2&) noexcept;
-	void SetPos(const float&, const float&) noexcept;
+	void SetPos(const Vector2& pos) noexcept;
+	void SetPos(const float x, const float y) noexcept;
 
 	const Utility::Vector2& GetScale() const noexcept;
-	void SetScale(const Utility::Vector2&) noexcept;
-	void SetScale(const float&, const float&) noexcept;
+	void SetScale(const Utility::Vector2& scale) noexcept;
+	void SetScale(const float x, const float y) noexcept;
 
 	const float& GetAngle() const noexcept;
-	void SetAngle(const float&) noexcept;
+	void SetAngle(const float angle) noexcept;
 };

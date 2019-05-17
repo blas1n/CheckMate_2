@@ -1,9 +1,10 @@
 #pragma once
 
+#include "stdafx.h"
 #include <list>
-#include "String.h"
 #include <memory>
 #include "IComponent.h"
+#include "Transform.h"
 #include "Vector2.h"
 
 class Object {
@@ -11,10 +12,12 @@ private:
 	using ComponentList = std::list<std::shared_ptr<IComponent>>;
 
 	std::tstring m_name;
+	std::unique_ptr<Transform> m_transform;
 	ComponentList m_components;
 
 public:
 	Object(std::tstring, const Utility::Vector2 = Utility::Vector2(), const Utility::Vector2 = Utility::Vector2(1, 1), const float = 0);
+	Object(const Object& object);
 	virtual ~Object() = default;
 
 public:
@@ -34,6 +37,11 @@ public:
 				return *(static_cast<ComponentType*>(iter.get()));
 
 		throw;
+	}
+
+	template <>
+	Transform& GetComponent<Transform>() const {
+		return *m_transform;
 	}
 
 	template <class ComponentType, class... Args>

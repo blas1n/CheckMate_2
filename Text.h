@@ -11,7 +11,7 @@ private:
 	TextInfo m_text;
 
 public:
-	void Draw(const Utility::Vector2&, const Utility::Vector2&, const float&) const;
+	void Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const;
 
 public:
 	const std::tstring& GetStr() const noexcept;
@@ -19,12 +19,8 @@ public:
 	const Gdiplus::Color& GetColor() const noexcept;
 	const Gdiplus::StringFormat& GetFormat() const noexcept;
 
-	template <class Str>
-	void SetStr(Str&& str) noexcept {
-		static_assert(std::is_constructible_v<std::tstring, Str>, "Unable to generate string with parameter.");
-		m_text.str = std::forward<Str>(str);
-	}
-
+	void SetStr(const std::tstring& str) noexcept;
+	void SetStr(std::tstring&& str) noexcept;
 	void SetFont(const std::shared_ptr<Gdiplus::Font>&) noexcept;
 	void SetColor(const Gdiplus::Color&) noexcept;
 	void SetFormat(const std::shared_ptr<Gdiplus::StringFormat>&) noexcept;

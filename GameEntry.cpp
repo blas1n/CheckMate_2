@@ -51,7 +51,7 @@ void GameEntry() {
 				for (int j = 0; j < wndRect.bottom / 100 + 1; j++) {
 					_sntprintf_s(nameBuffer, 10, TEXT("Tile %d %d"), i, j);
 
-					stageScene.AddObject(nameBuffer).AddComponent<Renderer>(path[tile % 2]).GetEntity().GetComponent<Transform>().SetPos(i * 100 + 50, j * 100 + 50);
+					stageScene.AddObject(nameBuffer).AddComponent<Renderer>(path[tile % 2]).GetEntity().GetComponent<Transform>().SetPos(i * 100.0f + 50.0f, j * 100.0f + 50.0f);
 					tile++;
 				}
 

@@ -2,11 +2,6 @@
 
 #include "stdafx.h"
 #include <gdiplus.h>
-#include <string>
-
-namespace std {
-	using tstring = std::basic_string<TCHAR>;
-}
 
 struct TextInfo {
 	std::tstring str;

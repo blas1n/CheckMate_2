@@ -8,7 +8,7 @@ Sprite::Sprite(const Sprite& other)
 	: m_pImage(nullptr),
 	m_name(other.m_name) {}
 
-void Sprite::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+void Sprite::Draw(const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const {
 	if (m_pImage != nullptr)
 		GameDirector::GetGameDirector().GetRenderManager().RenderImage(m_pImage.get(), pos, scale, angle);
 }

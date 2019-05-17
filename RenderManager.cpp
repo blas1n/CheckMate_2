@@ -24,7 +24,7 @@ void RenderManager::RenderOnScreen(HDC hDC) {
 	m_pCachedBitmap.reset();
 }
 
-void RenderManager::RenderImage(Gdiplus::Image* image, const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+void RenderManager::RenderImage(Gdiplus::Image* image, const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const {
 	Gdiplus::Matrix matrix;
 	GetConversionMatrix(matrix, pos, scale, Utility::Vector2(static_cast<const float>(image->GetWidth()), static_cast<const float>(image->GetHeight())), angle);
 
@@ -33,7 +33,7 @@ void RenderManager::RenderImage(Gdiplus::Image* image, const Utility::Vector2& p
 	m_pMemGraphics->ResetTransform();
 }
 
-void RenderManager::RenderText(const TextInfo& text, const Utility::Vector2& pos, const Utility::Vector2& scale, const float& angle) const {
+void RenderManager::RenderText(const TextInfo& text, const Utility::Vector2& pos, const Utility::Vector2& scale, const float angle) const {
 	Gdiplus::RectF rect;
 	m_pMemGraphics->MeasureString(text.str.c_str(), static_cast<INT>(text.str.length()), text.font.get(), Gdiplus::PointF(0, 0), text.format.get(), &rect);
 	
@@ -46,7 +46,7 @@ void RenderManager::RenderText(const TextInfo& text, const Utility::Vector2& pos
 }
 
 void RenderManager::GetConversionMatrix(Gdiplus::Matrix& matrix, const Utility::Vector2& pos,
-	const Utility::Vector2& scale, const Utility::Vector2& area, const float& angle) const {
+	const Utility::Vector2& scale, const Utility::Vector2& area, const float angle) const {
 
 	matrix.Scale(scale.x, scale.y);
 	matrix.Translate(pos.x / scale.x - area.x * 0.5f, pos.y / scale.y - area.y * 0.5f);
