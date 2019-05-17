@@ -7,7 +7,7 @@ void UiManager::UiLoop() noexcept {
 	while (true) {
 		{
 			std::unique_lock<std::mutex> lock(m_uiMutex);
-			cv.wait(lock, [&] { return (m_isEnd || !m_waitingQueue.empty()); });
+			cv.wait(lock, [this] { return (m_isEnd || !m_waitingQueue.empty()); });
 
 			if (m_isEnd) return;
 

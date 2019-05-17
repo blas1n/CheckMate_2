@@ -4,13 +4,8 @@
 
 Object::Object(std::tstring name, const Utility::Vector2 pos, const Utility::Vector2 scale, const float angle)
 	: m_name(name),
-	m_components() {
-
-	m_transform = std::make_unique<Transform>(this);
-	m_transform->SetPos(pos);
-	m_transform->SetScale(scale);
-	m_transform->SetAngle(angle);
-}
+	m_transform(std::make_unique<Transform>(this, pos, scale, angle)),
+	m_components() {}
 
 Object::Object(const Object& object)
 	: m_name(object.m_name),
